@@ -1,0 +1,6 @@
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

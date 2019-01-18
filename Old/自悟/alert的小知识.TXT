@@ -1,0 +1,1 @@
+alert是 window 元素的方法

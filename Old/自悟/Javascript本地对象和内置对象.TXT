@@ -1,0 +1,5 @@
+【1】本地对象：
+Object，Function，Array，String，Boolean，Number，Date，RegExp，Error，EvalError，RangeError，ReferenceError，SyntaxError，TypeError,URIError
+
+【2】内置对象：
+Math，isNaN(),parseInt(),parseFloat()

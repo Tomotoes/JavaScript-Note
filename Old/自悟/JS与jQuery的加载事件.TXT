@@ -1,0 +1,5 @@
+原生的JS的window.onload 与 jQuery的 $(document).ready(function(){})有什么不同？
+
+【1】window.onload()方法 是必须等到页面内包括图片的所有元素加载完毕后才能执行。
+
+【2】$(document).ready(function(){})是DOM结构绘制完毕后就执行，不必等到加载完毕

@@ -1,0 +1,7 @@
+【1】before() 内部追加
+
+【2】insertBefore() 外部追加
+
+【3】append() 向每个元素内部追加内容
+
+【4】appendTo() 将所有的元素 追加到指定的元素中

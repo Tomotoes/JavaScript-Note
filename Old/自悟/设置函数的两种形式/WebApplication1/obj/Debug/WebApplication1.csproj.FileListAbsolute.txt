@@ -1,0 +1,12 @@
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\UserData\lenovo\Desktop\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+I:\JavaScript\自悟\设置函数的两种形式\WebApplication1\bin\WebApplication1.dll.config
+I:\JavaScript\自悟\设置函数的两种形式\WebApplication1\bin\WebApplication1.dll
+I:\JavaScript\自悟\设置函数的两种形式\WebApplication1\bin\WebApplication1.pdb
+I:\JavaScript\自悟\设置函数的两种形式\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+I:\JavaScript\自悟\设置函数的两种形式\WebApplication1\obj\Debug\WebApplication1.dll
+I:\JavaScript\自悟\设置函数的两种形式\WebApplication1\obj\Debug\WebApplication1.pdb

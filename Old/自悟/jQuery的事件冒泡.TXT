@@ -1,0 +1,3 @@
+事件冒泡是从里面的往外面开始触发。
+
+在jQuery中提供了 stopPropagation() 方法可以停止冒泡

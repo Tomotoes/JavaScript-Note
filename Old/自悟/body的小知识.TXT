@@ -1,0 +1,1 @@
+body 是 window.document 元素的属性

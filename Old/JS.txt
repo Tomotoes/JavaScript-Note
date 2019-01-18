@@ -1,0 +1,1738 @@
+1.阮一峰老师的jQuery设计思想
+
+$('div:gt(2)') // 选择所有的div元素，除了前三个
+
+$('div:animated') // 选择当前处于动画状态的div元素
+
+$('div').has('p'); // 选择包含p元素的div元素
+
+$('div').not('.myClass'); //选择class不等于myClass的div元素
+
+$('div').filter('.myClass'); //选择class等于myClass的div元素
+
+$('div').first(); //选择第1个div元素
+
+$('div').eq(5); //选择第6个div元素
+
+$('div').next('p'); //选择div元素后面的第一个p元素
+　　
+$('div').parent(); //选择div元素的父元素
+　　
+$('div').closest('form'); //选择离div最近的那个form父元素
+　　
+$('div').children(); //选择div的所有子元素
+　　
+$('div').siblings(); //选择div的同级元素
+
+
+$('div').find('h3').eq(2).html('Hello');
+
+$('div') //找到div元素
+.find('h3') //选择其中的h3元素
+.eq(2) //选择第3个h3元素
+.html('Hello'); //将它的内容改为Hello
+
+牛逼的 End方法
+$('div')
+.find('h3')
+.eq(2)
+.html('Hello')
+.end() //退回到选中所有的h3元素的那一步
+.eq(0) //选中第一个h3元素
+.html('World'); //将它的内容改为Word
+
+$('div').insertAfter($('p'));把div元素移动p元素后面：
+
+$('p').after($('div'));把p元素加到div元素前面：
+
+六、元素的操作：复制、删除和创建
+除了元素的位置移动之外，jQuery还提供其他几种操作元素的重要方法。
+复制元素使用.clone()。
+删除元素使用.remove()和.detach()。两者的区别在于，前者不保留被删除元素的事件，后者保留，有利于重新插入文档时使用。
+清空元素内容（但是不删除该元素）使用.empty()。
+创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了：
+
+http://www.ruanyifeng.com/blog/2011/07/jquery_fundamentals.html
+
+待我学完 CSS，JS  再来解决你
+
+有句话对 jQuery总结的很好 就是 先选择 后操作
+
+<!--
+  事实证明，我们可以获取某个元素的style属性 然后对齐操作的效率是很高的
+
+  上面代码中，style属性的值是一个对象（简称style对象）。
+  这个对象所包含的属性与CSS规则一一对应，但是名字需要改写，
+
+  比如background-color写成backgroundColor。
+  改写的规则是将横杠从CSS属性名中去除，然后将横杠后的第一个字母大写。
+
+  如果CSS属性名是JavaScript保留字，则规则名之前需要加上字符串css，
+  比如float写成cssFloat。
+-->
+typeof content.style['webkitAnimation'] === 'string'
+
+
+
+
+API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。
+
+
+
+总结一下 13点09分今天所掌握的
+
+CSS自定义元素 使用方法 var(--xxx) 就好比一个变量
+
+CSS动画的补全，实在是太炫酷了
+
+CSS的优先级老大 !important甚至超过了内联样式表
+
+HTML5可以自定义元素
+
+jQuery，JS 操作CSS的方式 都是内联样式
+
+var b = new Array(10);
+b.join('-');//'---------'，9个连字符组成的字符串
+
+
+onmousewheel 滚轮事件？？
+
+
+<body>
+ <input type="button" onClick="newWin()" value="点击我，打开新窗口!">
+ <script>
+ function newWin(){
+     window.open('http://www.baidu.com', '_blank', 'width=600,height=400,top=0,left=10');
+ }
+ </script>
+ </body>
+
+ 点击按钮，在新窗口打开百度首页，宽 600，高 400，距屏顶 0 像素，屏左 10 像素。
+
+ border-radius: 50%  这就可以变成一个圆了？？
+
+
+
+
+
+JS中一定要加分号！
+
+ HTML元素的属性名是大小写不敏感的，但是JavaScript对象的属性名是大小写敏感的。转换规则是，转为JavaScript属性名时，一律采用小写。如果属性名包括多个单词，则采用骆驼拼写法，即从第二个单词开始，每个单词的首字母采用大写，比如onClick。
+
+有些HTML属性名是JavaScript的保留字，转为JavaScript属性时，必须改名。主要是以下两个。
+
+for属性改为htmlFor
+class属性改为className
+另外，HTML属性值一般都是字符串，但是JavaScript属性会自动转换类型。比如，将字符串true转为布尔值，将onClick的值转为一个函数，将style属性的值转为一个CSSStyleDeclaration对象。
+
+属性名不应该使用A到Z的大写字母，比如不能有data-helloWorld这样的属性名，而要写成data-hello-world。
+
+
+所谓DOM
+
+DOM是JavaScript操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个JavaScript对象，从而可以用脚本进行各种操作（比如增删内容）。
+
+浏览器会根据DOM模型，将结构化文档（比如HTML和XML）解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。所以，DOM可以理解成网页的编程接口。DOM有自己的国际标准，目前的通用版本是DOM 3，下一代版本DOM 4正在拟定中。
+
+严格地说，DOM不属于JavaScript，但是操作DOM是JavaScript最常见的任务，而JavaScript也是最常用于DOM操作的语言。本章介绍的就是JavaScript对DOM标准的实现和用法。
+
+父节点关系（parentNode）：直接的那个上级节点
+子节点关系（childNodes）：直接的下级节点
+同级节点关系（sibling）：拥有同一个父节点的节点
+
+DOM提供操作接口，用来获取三种关系的节点。其中，子节点接口包括firstChild（第一个子节点）和lastChild（最后一个子节点）等属性，同级节点接口包括nextSibling（紧邻在后的那个同级节点）和previousSibling（紧邻在前的那个同级节点）属性。
+
+所有节点对象都是浏览器内置的Node对象的实例，继承了Node属性和方法。这是所有节点的共同特征。
+
+
+
+
+总结一下  DOM 各种的增删改查，并且 一定要总结好！！！！！
+
+1.Node
+
+2.Element
+
+3.text
+
+4.class
+
+5.style
+
+6.Attribute
+
+一个网页：
+
+每个标签 都是 ElementNode   每个属性都是 AttributeNode
+文本是 TextNode   
+
+有关Node  我们不会深入 因为 有些节点 没有必要
+
+然后是 Element  增加 document.createElement
+
+Node.replace
+
+Element.remove()
+
+Element.focus
+
+HTML5自定义
+
+元素 必须包括‘-’
+
+属性 必须 data-xxx  xxx不能有大写
+
+css属性  必须 --开头
+
+
+
+
+
+
+
+控制台命令 识别CSS 并且 可以自己定制
+
+输出
+console.warn() 感叹号
+<!-- 
+console.error() 叉号
+console.log() 
+ -->
+将输出信息分组
+console.group()
+console.groupCollapsed()
+console.groupEnd()
+
+<!-- 
+计时
+console.time()  console.timeEnd('xxx')
+
+清除面板
+console.clear() 
+-->
+
+获取节点信息
+console.dir(xxx节点)
+console.dirxml(xxx节点)
+
+复合型数据输出 JSON
+console.table()
+
+debugger； 代码运行到debugger语句时，就会暂停运行，自动打开控制台界面。
+
+常用API
+$(selector)返回第一个匹配的元素，等同于document.querySelector()
+$$(selector)返回一个选中的DOM对象，等同于document.querySelectorAll。
+clear()：清除控制台的历史。
+copy(object)：复制特定DOM元素到剪贴板。
+dir(object)：显示特定对象的所有属性，是console.dir方法的别名。
+dirxml(object)：显示特定对象的XML形式，是console.dirxml方法的别名。
+inspect(object）：打开相关面板，并选中相应的元素：DOM元素在Elements面板中显示，JavaScript对象在Profiles面板中显示。
+
+4个视频！！！！必须看完！
+
+
+clientHight/Width：可见部分的大小 只包括padding
+
+clientTop/Left： 元素边框的大小
+
+scrollHeight/Width 元素的实际大小 只包括padding
+
+scrollTop/Left 元素可以滚动的距离
+
+offsetHeight/Width：元素的实际大小 包括padding，border
+
+offsetTop/Left：相对Element.offsetParent的 垂直/水平位移
+
+整张网页的高度和宽度，可以从document.documentElement（即<html>元素）或<body>元素上读取。
+
+console.log(window.innerHeight )// 包括滚动条 742
+console.log(document.documentElement.clientHeight) // 不包括滚动条 725
+
+// 视口宽度
+console.log(window.innerWidth )// 包括滚动条 1536
+console.log(document.documentElement.clientWidth) // 不包括滚动条 1519
+
+// 网页元素左上角的视口横坐标
+console.log(header.getBoundingClientRect().left)//8
+
+// 网页元素左上角的视口纵坐标
+console.log(header.getBoundingClientRect().top)//8
+
+在Google中 这个视口坐标 便是 body的margin
+
+
+
+
+总结一下 对象
+
+对象，是一种无序的数据集合，由若干个“键值对”（key-value）构成 这个键值对 当然是冒号连接了。
+
+let p = {
+  o: "Hello",
+  f: function(x) {
+    return ++x;
+  }, //最后一个属性 加不加逗号 都无所谓
+};
+
+//对象的生成
+
+let o1 = {};//简洁写法
+
+let o2 = new Object();//使用构造函数
+
+let o3 = Object.create(Object.prototype);//在继承的场合下使用
+
+
+//变量名指向对象 便是引用  这里的引用 和C#的引用一样 
+
+//如果不同的变量名指向同一个对象，那么它们都是这个对象的引用，
+//也就是说指向同一个内存地址。修改其中一个变量，会影响到其他所有变量。
+let q = p;
+q.o = 'Majin'
+console.log(p.o); //Majin
+
+
+//查看一个对象的所有属性 Object.keys()
+console.log(Object.keys(p)); //["o", "f"]
+
+
+//读取属性的第二种形式：[]
+console.log(p['o']); //Majin
+
+
+//delete命令
+delete p.o    console.log(Object.keys(p)); //f
+
+
+//in 运算符 判断某个对象是否包含某个属性 对继承的属性也 return true
+//数组元素 也可以用 in  毕竟数组也是对象
+var o = {p: 1}
+console.log('p' in o) //true
+
+对象的迭代循环 for...in
+var obj = { a: 1, b: 2,c: 3 };
+
+for(var prop in obj) {
+  console.log("obj." + prop + " = " + obj[prop]);
+}
+
+// Output:// "obj.a = 1"// "obj.b = 2"// "obj.c = 3"
+
+
+类似数组的对象
+sting ，DOM大多数的集合  string
+let A = Array.prototype.slice.call(Obj) //将 Obj放到 数组的原生方法slice里面
+
+并且自执行 函数前 必须有分号！
+
+
+
+不应该省略结尾的分号，还有一个原因。有些JavaScript代码压缩器不会自动添加分号，因此遇到没有分号的结尾，就会让代码保持原状，而不是压缩成一行，使得压缩无法得到最优的结果。
+
+另外，不写结尾的分号，可能会导致脚本合并出错。所以，有的代码库在第一行语句开始前，会加上一个分号。
+
+
+对象是一种 变量
+let o1 = {
+  a: 1
+};
+
+当我们像上面这样 声明一个函数的时候 
+
+这个函数其实就是 Object的构造函数
+
+console.log(o1 instanceof Object);//true
+
+也就是说 我们在平常声明对象的时候 
+
+如果不写构造函数  那么默认的构造函数 就是Object
+
+或许 这就是 JS和C#的一些区别
+
+C#是声明类  然后声明构造函数 然后对象都是由构造函数诞生
+
+JS无需类 直接写构造函数 或者说 在类中的属性方法  它全放在了 构造函数中
+
+所以 C#这种语言 是  大的本体（类） 小的出口（构造函数）
+   JS这种语言 是  本体就是出口 没有类这一说
+
+JS的面向对象编程基于“原型对象”。
+
+
+原型对象的原型对象的属性和方法 能被共享嘛？？？
+
+可以的
+
+
+
+
+
+** var p1 = new Person()都发生了什么？
+
+1.var p1 = new Object(); //此时p1._proto_ = Object Prototype
+
+2.p1._proto_ = Person.prototype;
+
+3.Person.call(p1);//使用新对象p1调用函数Person，将this作用域给p1
+
+1.消息  2.成功 3.重定向 4.请求错误 5.服务器错误
+
+ 304：响应禁止包含消息体，如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。
+ 305：被请求的资源必须通过指定的代理才能被访问。
+ 400：语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求，或者请求参数有误。
+ 403：服务器已经理解请求，但是拒绝执行它。
+ 404：请求失败，请求所希望得到的资源未被在服务器上发现。
+ 500：服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器端的源代码出现错误时出现。
+
+
+ 总结一下 属性 原型对象的 方法
+
+【1】
+ object.hasOwnProperty( propertyName )
+
+ object对象 有没有 propertyName属性 不包括原型属性  没有返回false  有返回true
+
+【2】
+ Object.getPrototypeOf(Object) 方法 返回一个对象的原型
+
+ 【3】
+
+ Object.setPrototypeOf方法可以为现有对象设置原型，返回一个新对象。
+
+Object.setPrototypeOf方法接受两个参数，第一个是现有对象，第二个是原型对象。
+var a = {x: 1};
+var b = Object.setPrototypeOf({}, a);
+// 等同于
+// var b = {__proto__: a};
+
+b.x // 1
+【4】
+Object.create()
+该方法接受一个对象作为参数，然后以它为原型，返回一个实例对象。该实例完全继承继承原型对象的属性。
+
+【5】
+对象实例的isPrototypeOf方法，用来判断一个对象是否是另一个对象的原型。
+
+【6】
+__proto__属性（前后各两个下划线）可以改写某个对象的原型对象。
+
+【7】
+Object.keys
+Object.getOwnPropertyNames方法
+一般用来遍历对象的属性。它们的参数都是一个对象，都返回一个数组，
+该数组的成员都是对象自身的（而不是继承的）所有属性名
+Object.keys方法只返回可枚举的属性，
+Object.getOwnPropertyNames方法还返回不可枚举的属性名。
+
+【8】isPrototypeOf()：判断当前对象是否为另一个对象的原型。
+
+isPrototypeOf()：判断当前对象是否为另一个对象的原型。
+getPrototypeOf()：获取对象的Prototype对象。
+setPrototypeOf方法可以为现有对象设置原型，返回一个新对象。
+
+
+由于instanceof对整个原型链上的对象都有效，因此同一个实例对象，可能会对多个构造函数都返回true。
+var d = new Date();
+d instanceof Date // true
+d instanceof Object // true
+
+属性描述对象
+
+value  值
+
+writable  value是否可以改变
+
+emumerable 是否可以枚举
+
+Object.getOwnPropertyNames方法返回直接定义在某个对象上面的全部属性的名称，而不管该属性是否可枚举。
+
+对象实例的propertyIsEnumerable方法用来判断一个属性是否可枚举。
+
+
+主要是这三个方法
+for..in循环
+Object.keys方法
+JSON.stringify方法
+
+configurable 是否可以配置 也就是 是否可以改变以上的值 还有delete 
+
+set/get 存值/取值函数
+
+
+读取 属性描述的方法
+
+Object.getOwnPropertyDescriptor 得到自己的属性的描述
+
+
+修改 属性描述的方法
+
+Object.definedProperty (object, propertyName, attributesObject)
+接受三个参数，第一个参数 是属性所在的对象 第二个是 属性名字（字符串） 第三个是属性的描述对象
+
+var o = Object.defineProperty({}, 'p', {
+  value: 123,
+  writable: false,
+  enumerable: true,
+  configurable: false
+});
+
+如果一次修改多个属性 Object.definedProperties
+
+var o = Object.defineProperties({}, {
+  p1: { value: 123, enumerable: true },
+  p2: { value: 'abc', enumerable: true },
+  p3: { get: function () { return this.p1 + this.p2 },
+    enumerable:true,
+    configurable:true
+  }
+});
+
+
+其中对 存取器的引用也 很重要
+
+var o = {
+  get p() {
+    return 'getter';
+  },
+  set p(value) {
+    console.log('setter: ' + value);
+  }
+};
+
+控制一个对象的改写状态
+
+Object.perventExtensions() 避免扩展 让对象无法增加新的属性
+Object.isExtensible方法用于检查一个对象是否使用了Object.preventExtensions方法。
+
+Object.seal() 密封  让对象无法增加新的属性 也无法删除旧属性
+Object.isSealed方法用于检查一个对象是否使用了Object.seal方法。
+
+Object.freeze() 冻结 让对象无法增加新的属性，也无法删除旧属性，也无法改变属性的值，使得这个对象成常量
+Object.isFrozen方法用于检查一个对象是否使用了Object.freeze()方法。
+
+需要注意的是，使用上面这些方法锁定对象的可写性，但是依然可以通过改变该对象的原型对象，来为它增加属性
+一种解决方案是，把原型也冻结住。
+
+另外一个局限是，如果属性值是对象，上面这些方法只能冻结属性指向的对象，而不能冻结对象本身的内容。
+
+
+
+
+
+
+Object.assign  ,  Object.getOwnPropertyNames  不包括原生对象的属性和方法
+
+Object.create 包括原生对象的属性和方法
+
+可枚举的属性  不包括原生对象的属性和方法
+
+
+
+
+
+
+各种布局
+
+text-align:center; 文本居中对齐
+line-height:100%;  文本垂直居中
+
+vertical-align:middle; 垂直居中   好像只有在 display:table-cell 中才起作用
+
+display:inline-block;  text-align vertical-align:middle 都会对齐起作用
+
+
+display:flex;
+水平居中 justify-content:center;
+垂直居中 align-items:center;
+
+掌握了 auto的原理 如果父节点的宽是100px 子节点的宽是20px 那么 子节点的margin-left/right就是 40px
+
+很喜欢一种居中方式 那就是 absolute 加上 transform
+.parent {position: relative; }
+.child {position: absolute; left: 50%; transform: translateX(-50%); }
+
+
+
+
+
+先复习昨天的知识 然后清理手机消息  然后继续学习阮老师的文档
+
+canvas.getContext("2d")//通过 getContext()取得关键的上下文对象，2d表示画布是“平面的”
+
+fillRect(x,y,width,height)  //绘制一个填充的矩形
+strokeRect(x,y,width,height)//绘制一个矩形的边框
+fillStyle=red;    //给上下文对象这支画笔添加填充颜色
+
+fillText      //实心的文本
+strokeText      //空心的文本
+
+drawImage(image,x,y)//其中 image是 image或者canvas对象
+
+beginPath();  //开始绘制路径
+ctx.arc(100,100,100,0,Math.PI*2,true); // 绘制一个起点（100,100），半径为100的圆
+ctx.clip(); // 裁剪          
+ctx.drawImage(img, 0, 0); // 画图
+
+canvas.toDataURL('image/jpeg', quality) // 创建一个JPG图片。你可以有选择地提供从0到1的品质量，1表示最好品质
+
+
+jQuery创建元素的方法？
+$('<div class='window_boundingBox'></div>') 如果没有这个DIV  会自动创建是吗？？？
+
+
+createShadowRoot
+
+
+
+
+Web Components不是单一的规范，而是一系列的技术组成，
+包括Template、Custom Element、Shadow DOM、HTML Import四种技术规范。
+使用时，并不一定这四者都要用到。
+其中，Custom Element和Shadow DOM最重要，Template和HTML Import只起到辅助作用。
+
+
+
+
+
+当我们创建一个 ShadowRoot时 会把原有的内容全部覆盖 也就是上面代码的 <b>xxxx</b>
+
+很奇怪 shadowroot 通过DOM 读取不到
+
+element.createShadowRoot().nodeType === template.content.nodeType;  true
+
+都是 #document-fragment
+
+
+
+template 就是一个隐形的BOSS
+
+主要有四个特性：
+
+惰性：在使用前不会被渲染；
+无副作用：在使用前，模板内部的各种脚本不会运行、图像不会加载等；
+内容不可见：模板的内容不存在于文档中，使用选择器无法获取；
+可被放置于任意位置：即使是 HTML 解析器不允许出现的位置，例如作为 <select> 的子元素。
+
+
+Custom Elements
+自定义元素允许开发者定义新的 HTML 元素类型。带来以下特性：
+
+定义新元素
+元素继承
+扩展原生 DOM 元素的 API
+
+
+标签名必须包含连字符 ' - '
+
+createdCallback: 创建元素实例时
+attachedCallback: 向文档插入实例时
+detachedCallback: 从文档移除实例时
+attributeChangedCallback(attrName, oldVal, newVal): 添加，移除，或修改一个属性时
+
+
+影子根节点
+Shadow DOM 和常规 DOM 之间存在一个边界，这个边界能防止常规 DOM 的样式泄露到 Shadow DOM 中来
+
+通过 :host 选择器可以设置宿主元素的样式。
+:host(p.className)
+
+
+::shadow 伪类选择器
+
+有时你可能会想让使用者打破影子边界的壁垒，让他们能够给你的组件添加一些样式，使用 ::shadow 伪类选择器我们可以赋予用户重写我们默认定义的自由。
+p::shadow span {color: red; font-size: 18px; }
+
+
+
+---------------------------------------------------------------------------------------------------
+作用:HTML Import将外部的html引入,引入的文档全局有效。其用途有二:一是将整个项目所有的公共的css和js引用都放在一个html页面里,需要时直接引用这个html文档即可;二是将写好的组件放入一个html文档中，需要时直接引用这个html文档;
+
+用法: 被引用html页面不需要操作,引用页面需要加入link标签 <link rel="import" href="xxx.html" />这时被引入的文档内容只会被主文档存储起来，不会显示在页面中，需要手动添加到DOM结构中。
+
+将被引用文档内容添加到DOM结构中，需要先获取其link值的import,再通过其获得对应子文档的DOM结构，将其引入。
+
+-----------------------------------------------------------------------------------------------------
+
+template里可以存放html,css,js;
+
+template本身及其内部的css、js、html不会被浏览器加载的,包括其中的格式;
+
+引入的时候先获取到模板,再复制模板的content,将其插入dom结构中;模板的作用在于可重用,每次的使用都需要复制模板的content，插入DOM中;模板的复制可以采用cloneNode,也可以采用importNode,推荐importNode;格式为var x=document.importNode(content,true)或者var x = content.cloneNode(true)
+
+移除模板 document.querySelector('template').remove();
+
+Template模板所定义的css样式和js可被外界干扰，封装性不好,通常多与shadowDOM组合;
+
+----------------------------------------------------------------------------------------------------
+shadowDOM,形成一个封闭的空间;将内部的html、css、js与外部隔离，不受干扰。其中,DOM结构中的元素是代言人,被爬虫爬取，而shadowDOM则是真正的DOM，用于展示内容,不会被爬取。多与template组合使用，使template内的css、js不受外界干扰。
+
+shadowDOM内的模板可以通过:host{}来修改其外部容器的css样式,在外部也可以通过选择器::shadow 选择器击穿修改shadowDOM内的css样式; 优先级依照元素选择器的优先级进行比较,来决定是否能够修改template内部的样式;
+
+样式的封装性：在不同的 DOM 树中样式无法相互影响，只有通过一系列手段突破边界才能对对方的样式进行操作。其中通过影子 DOM 来对宿主 DOM 进行操作的方式多种多样：
+
+对宿主本身进行样式影响：通过 :host 选择器
+对宿主的祖先节点进行样式影响：通过 :host-context 选择器
+对分布节点进行影响：通过 ::content 选择器
+
+----------------------------------------------------------------------------------------------------
+作用: customElement允许我们定制独有的HTMLElement元素;
+
+生命周期:customElement在其生命周期内提供了四个回调函数createdCallback、attachedCallback、attributeChangedCallback和detachedCallback;
+
+
+
+影子根节点 就是 一个节点的私房属性
+
+content
+
+
+setTimeout(fn, 0)在下一轮“事件循环”开始时执行，Promise.resolve()在本轮“事件循环”结束时执行，
+
+
+Promise.all()     // 全真则真 一假则假 改变状态
+
+Promise.race()    //竞速 比赛的意思，只要有一个完成 那么则决定Promise的状态
+
+Promise.resolve()//有时需要将现有对象转为Promise对象，Promise.resolve方法就起到这个作用。
+
+Promise.reject() //Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected
+
+done()//Promise对象的回调链，不管以then方法或catch方法结尾，要是最后一个方法抛出错误，都有可能无法捕捉到（因为Promise内部的错误不会冒泡到全局）。因此，我们可以提供一个done方法，总是处于回调链的尾端，保证抛出任何可能出现的错误。
+
+finally()//finally方法用于指定不管Promise对象最后状态如何，都会执行的操作。它与done方法的最大区别，它接受一个普通的回调函数作为参数，该函数不管怎样都必须执行
+
+
+
+
+
+
+
+
+抄袭一下 原型与 闭包的问题
+
+闭包是什么？
+当一个内部函数 被其外部函数之外的变量引用时，就形成了一个闭包。
+
+还可以这么理解：
+
+闭包就是一个具有封闭功能与包裹功能的结构，是为了实现 具有私有访问空间的函数。
+
+函数可以构成闭包，因为函数内部定义的数据函数 外部无法访问，即函数具有封闭性；
+函数可以封装代码 即具有包裹性，所以函数可以构成闭包。
+
+
+创建闭包的最常见的方式 就是在一个函数内 创建另一个函数，通过另一个函数访问这个函数的局部变量。
+
+闭包的三个特性：
+1.函数嵌套函数
+2.函数内部可以引用外部的参数和变量
+3.参数和变量不会被垃圾回收机制回收
+
+
+闭包有什么用，使用场景。
+
+设计私有的方法和变量
+当我们需要在模块中定义一些变量，并希望这些变量一直保存在内存中 但又不会“污染”全局的变量时，
+就可以用闭包来定义这个模块。
+
+
+闭包的缺点
+常驻内存，会增大内存使用量，使用不当很容易造成内存泄漏。
+一般函数执行完毕后，局部活动对象就被销毁，内存中仅仅保存全局作用域。
+但闭包的情况不同！
+
+
+使用闭包的好处
+1.希望一个变量长期驻扎在内存中
+2.避免全局变量的污染
+3.私有成员的存在
+
+函数套函数就是闭包吗？ 不是！
+
+
+由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁驻留在内存中的元素
+
+
+原型是什么 
+
+原型就是一个普通的对象，每个对象都有一个 原型（Object的原型是null 而null没有原型对象）
+原型 能存储我们的方法，构造函数创建出来的实例对象  能够引用原型中的方法
+
+
+
+Object.defineProperty(Object_Name,Property_Name,describe_Object)
+
+
+
+Generator是遍历器的名词
+function * Method(){yield 'xxx';}
+
+...数组  将数组解构成一个个元素
+...变量  将变量组成一个数组
+
+Array.form(类似数组的对象，操作方法) 转换成真正的数组
+Array.of(变量)  用于将一组值 转成数组
+Array.find(操作函数(当前的值，当前的位置，数组))用于找出第一个符合条件的数组成员
+Array.fill(填充的元素，起始位置，结束位置)使用给定值，填充一个数组。
+Array.includes(数值，起始位置)表示某个数组是否包含给定的值
+
+以下三种方法都用于遍历数组  并且返回一个遍历器对象
+Array.keys()    键名的遍历
+Array.values()  键值的遍历
+Array.entries() 键值对的遍历
+
+可以使用 for...of 
+for (let [index, elem] of ['a', 'b'].entries()) 
+
+也可以手动调用 遍历器的遍历方法
+let letter = ['a', 'b', 'c'];
+let entries = letter.entries();
+console.log(entries.next().value); // [0, 'a']
+
+
+
+
+let 与 const
+
+如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。
+凡是在声明之前就使用这些变量，就会报错。
+
+不存在变量提升   声明的变量一定要在声明后使用
+暂时性死区       绑定区域
+不允许重复声明   不允许在相同的作用域内，重复声明同一个变量
+
+ES6 明确允许在块级作用域之中声明函数
+
+const声明一个只读的常量。一旦声明，常量的值就不能改变。
+
+
+解构奥秘
+let { log } = console; log(1);
+
+const Array_1 = [1,2,3];
+let {0:first,[Array_1.length-1]:last} = Array_1;
+
+字符串解构  let [A,B]="ab";
+
+
+
+
+
+字符串扩展
+
+传统上 JavaScript 只有 indexOf方法  可以用来确定一个字符串 是否包含在另一个字符串
+    
+ES6 又提供了三种办法
+includes()：返回布尔值，表示是否找到了参数字符串。
+startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
+endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。
+
+
+repeat方法返回一个新字符串，表示将原字符串重复n次。
+'x'.repeat(3) // "xxx"
+
+
+padStart()用于头部补全，padEnd()用于尾部补全。
+padStart和padEnd一共接受两个参数，
+第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。
+
+'x'.padStart(4, 'ab') // 'abax'
+
+'x'.padEnd(5, 'ab') // 'xabab'
+
+
+模板字符串 `${content}`
+1.想换行 直接回车在输入
+2.${xx}大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。说白了 就是执行js代码
+3.支持嵌套
+4.过滤HTML字符串，防止用户输入恶意内容。
+
+
+
+
+
+数值的扩展
+二进制Ob   八进制 Oo   十六进制 Ox
+
+Number.isInteger()用来判断一个值是否为整数。
+Number.isFinite()用来检查一个数值是否为有限的（finite）。
+Number.isNaN()用来检查一个值是否为NaN。
+
+Number.parseInt()
+Number.parseFloat()
+
+Math.trunc方法用于去除一个数的小数部分，返回整数部分。
+
+Math.cbrt方法用于计算一个数的立方根。
+
+ES2016 新增了一个指数运算符（**）。
+2**2 = 4    2**3 = 8
+
+ES6在Number对象上面，新增一个极小的常量Number.EPSILON。
+引入一个这么小的量的目的，在于为浮点数计算，设置一个误差范围。我们知道浮点数计算是不精确的。
+但是如果这个误差能够小于Number.EPSILON，我们就可以认为得到了正确结果。
+5.551115123125783e-17 < Number.EPSILON      // true
+
+Math.log10(x)返回以10为底的x的对数。如果x小于0，则返回NaN。
+Math.log2(x)返回以2为底的x的对数。如果x小于0，则返回NaN。
+
+
+
+
+
+函数的扩展
+指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。
+函数的name属性，返回该函数的函数名。包括匿名函数  name属性 是被赋值的变量名
+
+ES2016 做了一点修改，规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，
+那么函数内部就不能显式设定为严格模式，否则会报错。
+
+允许函数的最后一个参数有尾逗号。
+允许省略catch后面的参数，而不报错。
+
+
+箭头函数有几个使用注意点。
+
+（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
+（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+
+（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+
+（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+
+箭头函数导致this总是指向函数定义生效时所在的对象
+
+
+
+
+
+对象的扩展
+
+【1】
+实现 C#中的属性！ set，get 关键字(特殊的function) 加一个内置属性  取值赋值时 完全当作属性操作
+get set 是前提     内置属性是灵魂     操作时 将get/set的函数名  当成一个属性
+
+【2】
+对象的简约表示法
+
+1.属性
+let foo = 'bar';
+let baz = {foo };
+
+/*等价于
+let baz={foo:'bar'}
+
+2.方法
+let Obj = {Method() {return 'Method'; } };
+/*等价于
+let Obj={Method:function(){return 'Method'; } }
+
+总结一下，(貌似以后声明对象 不用使用 冒号了。。)
+      属性 可以直接写成属性名(当然要提前声明好)，
+      方法可以直接写方法名 不必用function声明  Method(){xxx}
+
+
+【3】属性名表达式
+let Obj = {
+['a' + 'b']: 'AB',
+  ['M' + 'ethod']: function() {
+    return 'Method';
+  }
+};
+console.log(Obj['Method']());
+console.log(Obj.Method());
+console.log(Obj['ab']);
+console.log(Obj.ab);
+
+个人完全看不出来有何意义所在
+
+
+
+【4】Object.is
+ES5 比较两个值是否相等，只有两个运算符：相等运算符（==）和严格相等运算符（===）。
+它们都有缺点，前者会自动转换数据类型，后者的NaN不等于自身，以及+0等于-0。
+JavaScript 缺乏一种运算，在所有环境中，只要两个值是一样的，它们就应该相等。
+Object.is就是部署这个算法的新方法。
+它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
+
+
+ES5可以通过下面的方法部署
+
+Object.defineProperty(Object, 'is', {
+  value: function(x, y) {
+    if(x === y) {
+      return x !== 0 || 1 / x === 1 / y;
+    }
+    return x !== x && y !== y;
+  },
+  configurable:true,
+  enumerable:false,
+  writable:true
+})
+
+
+Object.defineProperty(Object_Name,Property_Name,describe_Object)
+
+
+【5】Object.assign
+
+Object.assign方法用于对象的合并，将源对象的所有可枚举属性，复制到目标对象
+语法 Object.assign(目标对象，源对象1，源对象2)
+
+注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。
+
+Object.assign拷贝的属性是有限制的，
+只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（enumerable: false）
+属性名为 Symbol 值的属性，也会被Object.assign拷贝
+
+Object.assign方法实行的是浅拷贝，而不是深拷贝。
+也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
+
+Object.assign的用处
+
+(1) 为对象添加属性
+class Point {
+  constructor(x, y) {
+    Object.assign(this, {x, y});
+  }
+}
+
+(2) 为对象添加方法
+Object.assign(SomeClass.prototype, {
+  someMethod(arg1, arg2) {
+    ···
+  },
+  anotherMethod() {
+    ···
+  }
+});
+
+(3) 克隆对象
+function clone(origin) {
+  return Object.assign({}, origin);
+}
+
+function clone(origin) {
+  let originProto = Object.getPrototypeOf(origin);
+  return Object.assign(Object.create(originProto), origin);
+}
+
+
+(4)合并多个对象
+
+将多个对象合并到某个对象。
+const merge = (target, ...sources) => Object.assign(target, ...sources);
+
+如果希望合并后返回一个新对象，可以改写上面函数，对一个空对象合并。
+const merge = (...sources) => Object.assign({}, ...sources);
+
+
+(5)为属性指定默认值
+const DEFAULTS = {
+  logLevel: 0,
+  outputFormat: 'html'
+};
+
+function processContent(options) {
+  options = Object.assign({}, DEFAULTS, options);
+  console.log(options);
+  // ...
+}
+
+上面代码中，DEFAULTS对象是默认值，options对象是用户提供的参数。Object.assign方法将DEFAULTS和options合并成一个新对象，如果两者有同名属性，则option的属性值会覆盖DEFAULTS的属性值。
+
+注意，由于存在浅拷贝的问题，DEFAULTS对象和options对象的所有属性的值，最好都是简单类型，不要指向另一个对象。否则，DEFAULTS对象的该属性很可能不起作用。
+
+
+Object.assign([1, 2, 3], [4, 5])  ===  [4,5,3]
+
+
+【7】属性的可枚举性
+
+
+
+//查看一个对象的所有属性 Object.keys()
+console.log(Object.keys(p)); //["o", "f"]
+
+
+//读取属性的第二种形式：[]
+console.log(p['o']); //Majin
+
+
+//delete命令
+delete p.o    console.log(Object.keys(p)); //f
+1.消息  2.成功 3.重定向 4.请求错误 5.服务器错误
+
+ 304：响应禁止包含消息体，如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。
+ 305：被请求的资源必须通过指定的代理才能被访问。
+ 400：语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求，或者请求参数有误。
+ 403：服务器已经理解请求，但是拒绝执行它。
+ 404：请求失败，请求所希望得到的资源未被在服务器上发现。
+ 500：服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器端的源代码出现错误时出现。
+
+
+ 总结一下 属性 原型对象的 方法
+
+【1】
+ object.hasOwnProperty( propertyName )
+
+ object对象 有没有 propertyName属性 不包括原型属性  没有返回false  有返回true
+
+【2】
+ Object.getPrototypeOf(Object) 方法 返回一个对象的原型
+
+ 【3】
+
+ Object.setPrototypeOf方法可以为现有对象设置原型，返回一个新对象。
+
+Object.setPrototypeOf方法接受两个参数，第一个是现有对象，第二个是原型对象。
+var a = {x: 1};
+var b = Object.setPrototypeOf({}, a);
+// 等同于
+// var b = {__proto__: a};
+
+b.x // 1
+【4】
+Object.create()
+该方法接受一个对象作为参数，然后以它为原型，返回一个实例对象。该实例完全继承继承原型对象的属性。
+
+【5】
+对象实例的isPrototypeOf方法，用来判断一个对象是否是另一个对象的原型。
+
+【6】
+__proto__属性（前后各两个下划线）可以改写某个对象的原型对象。
+
+【7】
+Object.keys
+Object.getOwnPropertyNames方法
+一般用来遍历对象的属性。它们的参数都是一个对象，都返回一个数组，
+该数组的成员都是对象自身的（而不是继承的）所有属性名
+Object.keys方法只返回可枚举的属性，
+Object.getOwnPropertyNames方法还返回不可枚举的属性名。
+
+【8】isPrototypeOf()：判断当前对象是否为另一个对象的原型。
+
+isPrototypeOf()：判断当前对象是否为另一个对象的原型。
+getPrototypeOf()：获取对象的Prototype对象。
+setPrototypeOf方法可以为现有对象设置原型，返回一个新对象。
+
+
+由于instanceof对整个原型链上的对象都有效，因此同一个实例对象，可能会对多个构造函数都返回true。
+var d = new Date();
+d instanceof Date // true
+d instanceof Object // true
+
+属性描述对象
+
+value  值
+
+writable  value是否可以改变
+
+emumerable 是否可以枚举
+
+Object.getOwnPropertyNames方法返回直接定义在某个对象上面的全部属性的名称，而不管该属性是否可枚举。
+
+对象实例的propertyIsEnumerable方法用来判断一个属性是否可枚举。
+
+
+主要是这三个方法
+for..in循环
+Object.keys方法
+JSON.stringify方法
+
+configurable 是否可以配置 也就是 是否可以改变以上的值 还有delete 
+
+set/get 存值/取值函数
+
+
+读取 属性描述的方法
+
+Object.getOwnPropertyDescriptor 得到自己的属性的描述
+
+
+修改 属性描述的方法
+
+Object.definedProperty (object, propertyName, attributesObject)
+接受三个参数，第一个参数 是属性所在的对象 第二个是 属性名字（字符串） 第三个是属性的描述对象
+
+var o = Object.defineProperty({}, 'p', {
+  value: 123,
+  writable: false,
+  enumerable: true,
+  configurable: false
+});
+
+如果一次修改多个属性 Object.definedProperties
+
+var o = Object.defineProperties({}, {
+  p1: { value: 123, enumerable: true },
+  p2: { value: 'abc', enumerable: true },
+  p3: { get: function () { return this.p1 + this.p2 },
+    enumerable:true,
+    configurable:true
+  }
+});
+
+
+其中对 存取器的引用也 很重要
+
+var o = {
+  get p() {
+    return 'getter';
+  },
+  set p(value) {
+    console.log('setter: ' + value);
+  }
+};
+
+控制一个对象的改写状态
+
+Object.perventExtensions() 避免扩展 让对象无法增加新的属性
+Object.isExtensible方法用于检查一个对象是否使用了Object.preventExtensions方法。
+
+Object.seal() 密封  让对象无法增加新的属性 也无法删除旧属性
+Object.isSealed方法用于检查一个对象是否使用了Object.seal方法。
+
+Object.freeze() 冻结 让对象无法增加新的属性，也无法删除旧属性，也无法改变属性的值，使得这个对象成常量
+Object.isFrozen方法用于检查一个对象是否使用了Object.freeze()方法。
+
+需要注意的是，使用上面这些方法锁定对象的可写性，但是依然可以通过改变该对象的原型对象，来为它增加属性
+一种解决方案是，把原型也冻结住。
+
+另外一个局限是，如果属性值是对象，上面这些方法只能冻结属性指向的对象，而不能冻结对象本身的内容。
+
+
+
+
+
+
+Object.assign  ,  Object.getOwnPropertyNames  不包括原生对象的属性和方法
+
+Object.create 包括原生对象的属性和方法
+
+可枚举的属性  不包括原生对象的属性和方法
+
+
+
+
+
+
+各种布局
+
+text-align:center; 文本居中对齐
+line-height:100%;  文本垂直居中
+
+vertical-align:middle; 垂直居中   好像只有在 display:table-cell 中才起作用
+
+display:inline-block;  text-align vertical-align:middle 都会对齐起作用
+
+
+display:flex;
+水平居中 justify-content:center;
+垂直居中 align-items:center;
+
+掌握了 auto的原理 如果父节点的宽是100px 子节点的宽是20px 那么 子节点的margin-left/right就是 40px
+
+很喜欢一种居中方式 那就是 absolute 加上 transform
+.parent {position: relative; }
+.child {position: absolute; left: 50%; transform: translateX(-50%); }
+
+
+
+
+
+先复习昨天的知识 然后清理手机消息  然后继续学习阮老师的文档
+
+canvas.getContext("2d")//通过 getContext()取得关键的上下文对象，2d表示画布是“平面的”
+
+fillRect(x,y,width,height)  //绘制一个填充的矩形
+strokeRect(x,y,width,height)//绘制一个矩形的边框
+fillStyle=red;    //给上下文对象这支画笔添加填充颜色
+
+fillText      //实心的文本
+strokeText      //空心的文本
+
+drawImage(image,x,y)//其中 image是 image或者canvas对象
+
+beginPath();  //开始绘制路径
+ctx.arc(100,100,100,0,Math.PI*2,true); // 绘制一个起点（100,100），半径为100的圆
+ctx.clip(); // 裁剪          
+ctx.drawImage(img, 0, 0); // 画图
+
+canvas.toDataURL('image/jpeg', quality) // 创建一个JPG图片。你可以有选择地提供从0到1的品质量，1表示最好品质
+
+
+jQuery创建元素的方法？
+$('<div class='window_boundingBox'></div>') 如果没有这个DIV  会自动创建是吗？？？
+
+
+createShadowRoot
+
+
+
+
+Web Components不是单一的规范，而是一系列的技术组成，
+包括Template、Custom Element、Shadow DOM、HTML Import四种技术规范。
+使用时，并不一定这四者都要用到。
+其中，Custom Element和Shadow DOM最重要，Template和HTML Import只起到辅助作用。
+
+
+
+
+
+当我们创建一个 ShadowRoot时 会把原有的内容全部覆盖 也就是上面代码的 <b>xxxx</b>
+
+很奇怪 shadowroot 通过DOM 读取不到
+
+element.createShadowRoot().nodeType === template.content.nodeType;  true
+
+都是 #document-fragment
+
+
+
+template 就是一个隐形的BOSS
+
+主要有四个特性：
+
+惰性：在使用前不会被渲染；
+无副作用：在使用前，模板内部的各种脚本不会运行、图像不会加载等；
+内容不可见：模板的内容不存在于文档中，使用选择器无法获取；
+可被放置于任意位置：即使是 HTML 解析器不允许出现的位置，例如作为 <select> 的子元素。
+
+
+Custom Elements
+自定义元素允许开发者定义新的 HTML 元素类型。带来以下特性：
+
+定义新元素
+元素继承
+扩展原生 DOM 元素的 API
+
+
+标签名必须包含连字符 ' - '
+
+createdCallback: 创建元素实例时
+attachedCallback: 向文档插入实例时
+detachedCallback: 从文档移除实例时
+attributeChangedCallback(attrName, oldVal, newVal): 添加，移除，或修改一个属性时
+
+
+影子根节点
+Shadow DOM 和常规 DOM 之间存在一个边界，这个边界能防止常规 DOM 的样式泄露到 Shadow DOM 中来
+
+通过 :host 选择器可以设置宿主元素的样式。
+:host(p.className)
+
+
+::shadow 伪类选择器
+
+有时你可能会想让使用者打破影子边界的壁垒，让他们能够给你的组件添加一些样式，使用 ::shadow 伪类选择器我们可以赋予用户重写我们默认定义的自由。
+p::shadow span {color: red; font-size: 18px; }
+
+
+
+---------------------------------------------------------------------------------------------------
+作用:HTML Import将外部的html引入,引入的文档全局有效。其用途有二:一是将整个项目所有的公共的css和js引用都放在一个html页面里,需要时直接引用这个html文档即可;二是将写好的组件放入一个html文档中，需要时直接引用这个html文档;
+
+用法: 被引用html页面不需要操作,引用页面需要加入link标签 <link rel="import" href="xxx.html" />这时被引入的文档内容只会被主文档存储起来，不会显示在页面中，需要手动添加到DOM结构中。
+
+将被引用文档内容添加到DOM结构中，需要先获取其link值的import,再通过其获得对应子文档的DOM结构，将其引入。
+
+-----------------------------------------------------------------------------------------------------
+
+template里可以存放html,css,js;
+
+template本身及其内部的css、js、html不会被浏览器加载的,包括其中的格式;
+
+引入的时候先获取到模板,再复制模板的content,将其插入dom结构中;模板的作用在于可重用,每次的使用都需要复制模板的content，插入DOM中;模板的复制可以采用cloneNode,也可以采用importNode,推荐importNode;格式为var x=document.importNode(content,true)或者var x = content.cloneNode(true)
+
+移除模板 document.querySelector('template').remove();
+
+Template模板所定义的css样式和js可被外界干扰，封装性不好,通常多与shadowDOM组合;
+
+----------------------------------------------------------------------------------------------------
+shadowDOM,形成一个封闭的空间;将内部的html、css、js与外部隔离，不受干扰。其中,DOM结构中的元素是代言人,被爬虫爬取，而shadowDOM则是真正的DOM，用于展示内容,不会被爬取。多与template组合使用，使template内的css、js不受外界干扰。
+
+shadowDOM内的模板可以通过:host{}来修改其外部容器的css样式,在外部也可以通过选择器::shadow 选择器击穿修改shadowDOM内的css样式; 优先级依照元素选择器的优先级进行比较,来决定是否能够修改template内部的样式;
+
+样式的封装性：在不同的 DOM 树中样式无法相互影响，只有通过一系列手段突破边界才能对对方的样式进行操作。其中通过影子 DOM 来对宿主 DOM 进行操作的方式多种多样：
+
+对宿主本身进行样式影响：通过 :host 选择器
+对宿主的祖先节点进行样式影响：通过 :host-context 选择器
+对分布节点进行影响：通过 ::content 选择器
+
+----------------------------------------------------------------------------------------------------
+作用: customElement允许我们定制独有的HTMLElement元素;
+
+生命周期:customElement在其生命周期内提供了四个回调函数createdCallback、attachedCallback、attributeChangedCallback和detachedCallback;
+
+
+
+影子根节点 就是 一个节点的私房属性
+
+content
+
+
+setTimeout(fn, 0)在下一轮“事件循环”开始时执行，Promise.resolve()在本轮“事件循环”结束时执行，
+
+
+Promise.all()     // 全真则真 一假则假 改变状态
+
+Promise.race()    //竞速 比赛的意思，只要有一个完成 那么则决定Promise的状态
+
+Promise.resolve()//有时需要将现有对象转为Promise对象，Promise.resolve方法就起到这个作用。
+
+Promise.reject() //Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected
+
+done()//Promise对象的回调链，不管以then方法或catch方法结尾，要是最后一个方法抛出错误，都有可能无法捕捉到（因为Promise内部的错误不会冒泡到全局）。因此，我们可以提供一个done方法，总是处于回调链的尾端，保证抛出任何可能出现的错误。
+
+finally()//finally方法用于指定不管Promise对象最后状态如何，都会执行的操作。它与done方法的最大区别，它接受一个普通的回调函数作为参数，该函数不管怎样都必须执行
+
+
+
+
+
+
+
+
+抄袭一下 原型与 闭包的问题
+
+闭包是什么？
+当一个内部函数 被其外部函数之外的变量引用时，就形成了一个闭包。
+
+还可以这么理解：
+
+闭包就是一个具有封闭功能与包裹功能的结构，是为了实现 具有私有访问空间的函数。
+
+函数可以构成闭包，因为函数内部定义的数据函数 外部无法访问，即函数具有封闭性；
+函数可以封装代码 即具有包裹性，所以函数可以构成闭包。
+
+
+创建闭包的最常见的方式 就是在一个函数内 创建另一个函数，通过另一个函数访问这个函数的局部变量。
+
+闭包的三个特性：
+1.函数嵌套函数
+2.函数内部可以引用外部的参数和变量
+3.参数和变量不会被垃圾回收机制回收
+
+
+闭包有什么用，使用场景。
+
+设计私有的方法和变量
+当我们需要在模块中定义一些变量，并希望这些变量一直保存在内存中 但又不会“污染”全局的变量时，
+就可以用闭包来定义这个模块。
+
+
+闭包的缺点
+常驻内存，会增大内存使用量，使用不当很容易造成内存泄漏。
+一般函数执行完毕后，局部活动对象就被销毁，内存中仅仅保存全局作用域。
+但闭包的情况不同！
+
+
+使用闭包的好处
+1.希望一个变量长期驻扎在内存中
+2.避免全局变量的污染
+3.私有成员的存在
+
+函数套函数就是闭包吗？ 不是！
+
+
+由于IE的js对象和DOM对象使用不同的垃圾收集方法，因此闭包在IE中会导致内存泄露问题，也就是无法销毁驻留在内存中的元素
+
+
+原型是什么 
+
+原型就是一个普通的对象，每个对象都有一个 原型（Object的原型是null 而null没有原型对象）
+原型 能存储我们的方法，构造函数创建出来的实例对象  能够引用原型中的方法
+
+
+
+Object.defineProperty(Object_Name,Property_Name,describe_Object)
+
+
+
+Generator是遍历器的名词
+function * Method(){yield 'xxx';}
+
+...数组  将数组解构成一个个元素
+...变量  将变量组成一个数组
+
+Array.form(类似数组的对象，操作方法) 转换成真正的数组
+Array.of(变量)  用于将一组值 转成数组
+Array.find(操作函数(当前的值，当前的位置，数组))用于找出第一个符合条件的数组成员
+Array.fill(填充的元素，起始位置，结束位置)使用给定值，填充一个数组。
+Array.includes(数值，起始位置)表示某个数组是否包含给定的值
+
+以下三种方法都用于遍历数组  并且返回一个遍历器对象
+Array.keys()    键名的遍历
+Array.values()  键值的遍历
+Array.entries() 键值对的遍历
+
+可以使用 for...of 
+for (let [index, elem] of ['a', 'b'].entries()) 
+
+也可以手动调用 遍历器的遍历方法
+let letter = ['a', 'b', 'c'];
+let entries = letter.entries();
+console.log(entries.next().value); // [0, 'a']
+
+
+
+
+let 与 const
+
+如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。
+凡是在声明之前就使用这些变量，就会报错。
+
+不存在变量提升   声明的变量一定要在声明后使用
+暂时性死区       绑定区域
+不允许重复声明   不允许在相同的作用域内，重复声明同一个变量
+
+ES6 明确允许在块级作用域之中声明函数
+
+const声明一个只读的常量。一旦声明，常量的值就不能改变。
+
+
+解构奥秘
+let { log } = console; log(1);
+
+const Array_1 = [1,2,3];
+let {0:first,[Array_1.length-1]:last} = Array_1;
+
+字符串解构  let [A,B]="ab";
+
+
+
+
+
+字符串扩展
+
+传统上 JavaScript 只有 indexOf方法  可以用来确定一个字符串 是否包含在另一个字符串
+    
+ES6 又提供了三种办法
+includes()：返回布尔值，表示是否找到了参数字符串。
+startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
+endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。
+
+
+repeat方法返回一个新字符串，表示将原字符串重复n次。
+'x'.repeat(3) // "xxx"
+
+
+padStart()用于头部补全，padEnd()用于尾部补全。
+padStart和padEnd一共接受两个参数，
+第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。
+
+'x'.padStart(4, 'ab') // 'abax'
+
+'x'.padEnd(5, 'ab') // 'xabab'
+
+
+模板字符串 `${content}`
+1.想换行 直接回车在输入
+2.${xx}大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。说白了 就是执行js代码
+3.支持嵌套
+4.过滤HTML字符串，防止用户输入恶意内容。
+
+
+
+
+
+数值的扩展
+二进制Ob   八进制 Oo   十六进制 Ox
+
+Number.isInteger()用来判断一个值是否为整数。
+Number.isFinite()用来检查一个数值是否为有限的（finite）。
+Number.isNaN()用来检查一个值是否为NaN。
+
+Number.parseInt()
+Number.parseFloat()
+
+Math.trunc方法用于去除一个数的小数部分，返回整数部分。
+
+Math.cbrt方法用于计算一个数的立方根。
+
+ES2016 新增了一个指数运算符（**）。
+2**2 = 4    2**3 = 8
+
+ES6在Number对象上面，新增一个极小的常量Number.EPSILON。
+引入一个这么小的量的目的，在于为浮点数计算，设置一个误差范围。我们知道浮点数计算是不精确的。
+但是如果这个误差能够小于Number.EPSILON，我们就可以认为得到了正确结果。
+5.551115123125783e-17 < Number.EPSILON      // true
+
+Math.log10(x)返回以10为底的x的对数。如果x小于0，则返回NaN。
+Math.log2(x)返回以2为底的x的对数。如果x小于0，则返回NaN。
+
+
+
+
+
+函数的扩展
+指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。
+函数的name属性，返回该函数的函数名。包括匿名函数  name属性 是被赋值的变量名
+
+ES2016 做了一点修改，规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，
+那么函数内部就不能显式设定为严格模式，否则会报错。
+
+允许函数的最后一个参数有尾逗号。
+允许省略catch后面的参数，而不报错。
+
+
+箭头函数有几个使用注意点。
+
+（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
+（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+
+（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+
+（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+
+箭头函数导致this总是指向函数定义生效时所在的对象
+
+
+
+
+对象的扩展
+
+【1】
+实现 C#中的属性！ set，get 关键字(特殊的function) 加一个内置属性  取值赋值时 完全当作属性操作
+get set 是前提     内置属性是灵魂     操作时 将get/set的函数名  当成一个属性
+
+【2】
+对象的简约表示法
+
+1.属性
+let foo = 'bar';
+let baz = {foo };
+
+/*等价于
+let baz={foo:'bar'}
+
+2.方法
+let Obj = {Method() {return 'Method'; } };
+/*等价于
+let Obj={Method:function(){return 'Method'; } }
+
+总结一下，(貌似以后声明对象 不用使用 冒号了。。)
+      属性 可以直接写成属性名(当然要提前声明好)，
+      方法可以直接写方法名 不必用function声明  Method(){xxx}
+
+
+【3】属性名表达式
+let Obj = {
+['a' + 'b']: 'AB',
+  ['M' + 'ethod']: function() {
+    return 'Method';
+  }
+};
+console.log(Obj['Method']());
+console.log(Obj.Method());
+console.log(Obj['ab']);
+console.log(Obj.ab);
+
+个人完全看不出来有何意义所在
+
+
+
+【4】Object.is
+ES5 比较两个值是否相等，只有两个运算符：相等运算符（==）和严格相等运算符（===）。
+它们都有缺点，前者会自动转换数据类型，后者的NaN不等于自身，以及+0等于-0。
+JavaScript 缺乏一种运算，在所有环境中，只要两个值是一样的，它们就应该相等。
+Object.is就是部署这个算法的新方法。
+它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
+
+
+ES5可以通过下面的方法部署
+
+Object.defineProperty(Object, 'is', {
+  value: function(x, y) {
+    if(x === y) {
+      return x !== 0 || 1 / x === 1 / y;
+    }
+    return x !== x && y !== y;
+  },
+  configurable:true,
+  enumerable:false,
+  writable:true
+})
+
+
+Object.defineProperty(Object_Name,Property_Name,describe_Object)
+
+
+【5】Object.assign
+
+Object.assign方法用于对象的合并，将源对象的所有可枚举属性，复制到目标对象
+语法 Object.assign(目标对象，源对象1，源对象2)
+
+注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。
+
+Object.assign拷贝的属性是有限制的，
+只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（enumerable: false）
+属性名为 Symbol 值的属性，也会被Object.assign拷贝
+
+Object.assign方法实行的是浅拷贝，而不是深拷贝。
+也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
+
+Object.assign的用处
+
+(1) 为对象添加属性
+class Point {
+  constructor(x, y) {
+    Object.assign(this, {x, y});
+  }
+}
+
+(2) 为对象添加方法
+Object.assign(SomeClass.prototype, {
+  someMethod(arg1, arg2) {
+    ···
+  },
+  anotherMethod() {
+    ···
+  }
+});
+
+(3) 克隆对象
+function clone(origin) {
+  return Object.assign({}, origin);
+}
+
+function clone(origin) {
+  let originProto = Object.getPrototypeOf(origin);
+  return Object.assign(Object.create(originProto), origin);
+}
+
+
+(4)合并多个对象
+
+将多个对象合并到某个对象。
+const merge = (target, ...sources) => Object.assign(target, ...sources);
+
+如果希望合并后返回一个新对象，可以改写上面函数，对一个空对象合并。
+const merge = (...sources) => Object.assign({}, ...sources);
+
+
+(5)为属性指定默认值
+const DEFAULTS = {
+  logLevel: 0,
+  outputFormat: 'html'
+};
+
+function processContent(options) {
+  options = Object.assign({}, DEFAULTS, options);
+  console.log(options);
+  // ...
+}
+
+上面代码中，DEFAULTS对象是默认值，options对象是用户提供的参数。Object.assign方法将DEFAULTS和options合并成一个新对象，如果两者有同名属性，则option的属性值会覆盖DEFAULTS的属性值。
+
+注意，由于存在浅拷贝的问题，DEFAULTS对象和options对象的所有属性的值，最好都是简单类型，不要指向另一个对象。否则，DEFAULTS对象的该属性很可能不起作用。
+
+
+Object.assign([1, 2, 3], [4, 5])  ===  [4,5,3]
+
+
+【7】属性的可枚举性

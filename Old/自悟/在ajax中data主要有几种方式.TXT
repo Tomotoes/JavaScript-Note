@@ -1,0 +1,6 @@
+三种
+【1】html拼接的
+
+【2】json数组
+
+【3】form表单经 serialize() 序列化的

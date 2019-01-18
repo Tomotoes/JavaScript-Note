@@ -1,0 +1,6 @@
+body中的onload()函数 和 jQuery中的 document.ready() 有什么区别？
+
+【1】我们可以在页面中使用多次 document.ready() ，但只能使用一次 onload()
+
+【2】document.ready() 函数在页面DOM元素加载完以后就会被调用，
+	 onload()函数 则要所有的关联资源(包括 图像，音频)加载完毕后，才会调用。

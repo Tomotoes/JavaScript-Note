@@ -1,0 +1,347 @@
+Node.nodeName           		节点名称
+Node.nodeType					节点类型的参数值
+Node.nodeValue					节点的文本值
+
+-------------------------------------------------------------------------------------------
+
+Node.parentNode					节点的父节点
+
+Node.childNodes					节点的所有子节点
+
+Node.firstChild					节点的第一个子节点
+Node.lastChild					节点的最后一个子节点
+
+Node.nextSibling				节点后面的同级节点
+Node.previousSibling			节点前面的同级节点
+
+
+Node.parentElement				节点的父Element节点
+
+Node.childern					节点的所有Element子节点
+
+Node.firstElementChild			节点的第一个Element子节点
+Node.lastElementChild			节点的最后一个Element子节点
+
+Node.nextElementSibling			节点后面的同级Element节点
+Node.previousElementSibling 	节点前面的同级Element节点
+
+Node.childElementCount			节点的子Element节点数量。
+
+-------------------------------------------------------------------------------------------
+
+Node.appendChild				节点的尾部插入子节点
+Node.insertBefore				节点的指定位置插入子节点 (要插入的Element,被插入的Element)
+
+Node.removeChild				节点移除子节点
+Node.remove						移除当前节点
+
+Node.replaceChild				节点替换子节点(New,Old)
+
+-------------------------------------------------------------------------------------------
+
+Node.textContent				节点和后代节点的文本
+
+Node.cloneNode					克隆节点 true克隆子节点
+
+Node.isEqualNode				两个节点是否相等
+
+Node.contains					参数节点是否为当前节点的后代 (两个节点)
+
+Node.hasChildNodes				节点是否有子节点 (一个节点)
+
+-------------------------------------------------------------------------------------------
+
+Nodelist						成员：Node.childNodes
+HTMLCollection					成员：Element
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+document.defaultView			window对象
+document.doctype				<!DOCTYPE html>
+
+document.documentElement		<html>
+document.head					<head>
+document.body					<body>
+
+-------------------------------------------------------------------------------------------
+
+document.links					设定了href的 a 及 area元素
+document.forms					页面中所有表单元素 form
+document.images					页面中所有图片元素
+document.embeds					页面中所有 embed元素
+
+document.scripts				页面中所有脚本
+document.styleSheets			网页中的样式表
+
+-------------------------------------------------------------------------------------------
+
+document.location.href 			文档的地址
+
+document.activeElement			获得焦点的元素
+
+document.readyState				属性返回当前文档的状态，共有三种可能的值。
+loading							加载HTML代码阶段（尚未完成解析）
+interactive						加载外部资源阶段时
+complete						加载完成时
+
+-------------------------------------------------------------------------------------------
+
+document.querySelector()		查找符合条件的节点
+document.querySelectorAll()		查找符合条件的所有节点
+document.getElementsByTagName()	查找符合标签名的所有节点
+document.getElementsByClassName()查找符合类名的所有节点
+document.getElementsByName()	查找符合名字的所有节点
+document.getElementById()		查找符合ID的节点
+
+document.elementFromPoint()		查找页面指定位置最上层的节点
+
+-------------------------------------------------------------------------------------------
+
+document.createElement()		创建一个元素节点
+document.createTextNode()		创建一个文本节点
+document.createAttribute()		创建一个属性节点
+document.createDocumentFragment()创建一个DOM片段
+
+document.hasFocus()				文档之中是否有元素获得焦点
+
+document.createNodeIterator()	一个DOM的子节点的遍历器
+document.createTreeWalker()		一个DOM的子树遍历器
+
+let NewNode = document.importNode(OldNode,true) 拷贝老节点到新节点  true拷贝子节点
+
+注册自定义节点 
+xxx = document.registerElement('xxx-xxx', { prototype: xxx, extends: 'button' });
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Element.after()					在当前节点的前面插入 多个参数（文档，生成的节点）
+Element.before()				在当前节点的后面插入 多个参数（文档，生成的节点）
+Element.prepend()				在当前节点的子节点中的 最前面位置 插入 多个参数（文档，生成的节点）
+Element.append()				在当前节点的子节点中的 最后面位置 插入 多个参数（文档，生成的节点）
+
+Element.replaceWith()			用（多个）参数（文档，生成节点）替换掉当前节点
+
+Element.createShadowRoot		为当前节点创建阴影节点，可以参考 video
+
+Element.tagName					节点的大写标签名 和 nodeName属性的值相等
+Element.innerHTML				内部HTML 可以用来增加删除节点
+Element.outerHTML				外部HTML 包括自身  可以用来增加删除节点
+Element.className				节点的Class属性
+
+Element.classList				节点控制Class属性的利器
+add()							增加一个class。
+remove()						移除一个class。
+contains()  					检查当前元素是否包含某个class。
+toggle()						将某个class移入或移出当前元素。
+item()  						返回指定索引位置的class。
+
+-------------------------------------------------------------------------------------------
+
+Element.clientHeight/Width		可见部分的大小 只包括padding
+
+Element.clientLeft/Top			元素边框的大小
+
+Element.scrollHeight/Width		元素的实际大小 只包括padding
+
+Element.scrollLeft/Top			元素可以滚动的垂直/水平位移
+
+Element.offsetHeight/Width		元素的实际大小 包括padding，border
+
+Element.offsetLeft/Top			相对Element.offsetParent的 垂直/水平位移
+
+
+Element.getBoundingClientRect()	元素的视口坐标
+
+-------------------------------------------------------------------------------------------
+
+Element.offsetParent			节点的设置了相对定位的父节点
+
+Element.closest					找到符合条件最近的父节点
+
+Element.match					判断节点是否 符合当前给的条件(选择器)
+
+Element.focus					将当前节点的焦点，转移到指定元素上
+
+Element.insertAdjacentHTML		解析HTML字符串，生成节点，插入指定位置 
+beforebegin					        在当前元素节点的前面。
+afterbegin						在当前元素节点的里面，插在它的第一个子元素之前。
+beforeend						在当前元素节点的里面，插在它的最后一个子元素之后。
+afterend						在当前元素节点的后面。
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Element.attributes				标签的所有属性节点对象
+
+Element.getAttribute			读取节点指定属性
+
+Element.setAttribute			设置节点指定属性
+
+Element.removeAttribute			删除节点指定属性
+
+Element.hasAttribute			节点是否包含指定属性
+
+HTML5标准属性						Element.name/type/id/href/src/action/method...
+
+Element.dataset					操作节点的自定义属性 Element{data-foo=xxx}
+Element.dataset.foo				读取			
+Element.dataset.foo = xxx		设置  
+delete Element.dataset.foo		删除 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+document.createTextNode('内容')	创建文本节点
+new Text('内容')   浏览器原生方法	创建文本节点
+			
+-------------------------------------------------------------------------------------------
+			
+NodeText.data					相等于 nodeValue
+NodeText.wholeText				将当前节点和毗邻的文本节点 一起返回
+NodeText.length					文本节点的长度
+
+-------------------------------------------------------------------------------------------
+				
+NodeText.appendData()			在Text节点的尾部增加字符串 	 （内容）
+NodeText.deleteData()			删除Text节点内部字符串 		 （位置，长度）
+NodeText.insertData()			在Text节点指定位置插入字符串 （位置，内容）
+NodeText.replaceData()			在Text节点替换内部文本		  （位置，删除长度，增加内容）
+			
+NodeText.subStringData()		在Text节点内部 获取字符串	  （位置，长度）
+			
+NodeText.splitText()			将Text节点一分为二，变成两个毗邻的Text节点   (分割位置)
+NodeText.normalize()			将两个毗邻的Text节点合并				  (无参数)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+addEventListener				绑定事件的监听函数
+removeEventListener				移除事件的监听函数
+dispatchEvent					触发事件
+
+-------------------------------------------------------------------------------------------
+
+event.bubbles					事件是否会冒泡
+event.eventPhase				返回一个整数，表示事件当前所处的阶段:0没有发生，1捕获，2目标，3冒泡
+event.cancelable				事件是否可以取消
+event.defaultPrevented			事件是否调用过preventDefault方法
+event.currentTarget				事件当前所在的节点
+event.target					触发事件的那个节点
+event.type						事件的类型
+event.detail					事件的某种信息，具体含义和事件的类型有关，比如dbclick的属性值是2
+event.timeStamp					返回一个毫秒的事件戳，事件的发生时间
+event.isTrusted					事件是否为真实用户触发
+event.relatedTarget				返回事件的相对相关节点 	 mouseenter  将要离开的节点等
+
+-------------------------------------------------------------------------------------------
+
+event.preventDefault()			取消浏览器对当前事件的默认行为，与 return false;有等同效果
+event.stopPrapagation()			阻止事件在DOM中继续传播
+event.stopImmediatePropagation()阻止事件在DOM中继续传播，当前节点的其他监听函数不会执行
+
+-------------------------------------------------------------------------------------------
+
+new Event(事件名)				自定义事件，默认不冒泡，不可以取消事件
+new CustomEvent(事件名,datail数据,bubbles,cancelable)有数据的自定义事件
+document.createEvent(事件名)		创建事件
+event.initEvent(事件名,bubbles,cancelable,额外属性)该参数事件必须是document.createEvent生成的
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+click							点击事件
+dbclick							双击事件
+
+-------------------------------------------------------------------------------------------
+
+mouseup							鼠标摁下后的释放事件
+mousedown						鼠标摁下事件
+mousemove						鼠标移动事件
+mouseover						鼠标进入，并且反复移动事件
+mouseenter						鼠标进入事件
+mouseout						鼠标离开（冒泡）
+mouseleave						鼠标事件
+
+-------------------------------------------------------------------------------------------
+
+contextmenu						右键菜单事件
+wheel							滚动事件
+
+focus事件						Element节点获得焦点后触发，该事件不会冒泡。
+blur事件							Element节点失去焦点后触发，该事件不会冒泡。
+
+-------------------------------------------------------------------------------------------
+
+keyCode							摁下的键盘码
+button							鼠标键信息 -1：没按键。 0：左键。 1：中键。 2：右键。
+buttons							返回一个3个比特位的值，表示同时按下了哪些键。
+
+altKey							事件发生时，是否按下 Alt键。
+ctrlKey							事件发生时，是否按下 Ctrl键。
+metaKey							事件发生时，是否按下 Meta键。
+shiftKey						事件发生时，是否按下 Shift键。
+
+clientX							相对于浏览器窗口左上角的水平坐标
+clientY							相对于浏览器窗口左上角的垂直坐标
+screenX							相对于屏幕左上角的水平坐标
+screenY							相对于屏幕左上角的垂直坐标
+movementX						当前位置与上一个mousemove事件之间的水平距离
+movementY						当前位置与上一个mousemove事件之间的垂直距离
+offsetX							发生事件的地点在事件源元素的坐标系统中的 x 坐标
+offsetY							发生事件的地点在事件源元素的坐标系统中的 y 坐标
+
+-------------------------------------------------------------------------------------------
+
+keydown							按下键盘时触发该事件。
+keypress						只要按下的键并非Ctrl、Alt、Shift和Meta，就接着触发keypress事件。
+keyup							松开键盘时触发该事件。
+
+-------------------------------------------------------------------------------------------
+进度条事件
+abort事件						当进度事件被中止时触发。如果发生错误，导致进程中止，不会触发该事件。
+error事件						由于错误导致资源无法加载时触发。
+load事件							进度成功结束时触发。
+loadstart事件					进度开始时触发。
+loadend事件						进度停止时触发，发生顺序排在error事件\abort事件\load事件后面。
+progress事件						当操作处于进度之中，由传输的数据块不断触发。
+timeout事件						进度超过限时触发。
+
+-------------------------------------------------------------------------------------------
+
+transitionEnd					transition结束后，触发transitionEnd事件
+animationstart					动画开始时触发
+animationend					动画结束时触发
+animationiteration				开始新一轮动画循环时触发
+
+-------------------------------------------------------------------------------------------
+
+拖拽事件
+触摸事件
+表单事件
+input
+select
+Change
+reset
+submit
+
+文档事件
+beforeunload					关闭之前事件
+unload							关闭事件
+load							加载事件
+error							错误事件
+resize							文档改变尺寸时触发事件
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+document.styleSheets			代表网页所有的样式表 包括link节点 和 style节点
+
+styleSheet[n].cssRules			第n个样式表的所有规则数组
+Sheet[n].insertRule(内容，位置)	增加一条规则到指定的位置					
+Sheet[n].deleteRule(位置)		删除指定位置的规则
+
+style.cssText					读写整个样式		
+selectorText					返回当前规则的选择器
+					
+window.getComputedStyle(元素).属性名	读取某个元素的某个CSS属性
+setProperty(属性名，值)			设置某个CSS属性					
+getPropertyValue(属性名)			读取某个CSS属性		
+removeProperty(属性名)			移除某个CSS属性
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

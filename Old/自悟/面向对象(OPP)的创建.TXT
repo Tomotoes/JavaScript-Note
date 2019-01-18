@@ -1,0 +1,14 @@
+var obj = new Object();
+
+var obj2 = {};
+
+obj=
+	{
+		name:
+			{
+				first:'Mj',
+				last:'LiuLin'
+			},
+			
+			address:'China'
+	};

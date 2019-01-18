@@ -1,0 +1,17 @@
+【1】top
+top该变更 永远指向分割窗口最高层次的游览器窗口。
+如果计划从分割窗口的最高层次开始执行命令，就可以用top变量
+
+【2】openner
+openner用于在 window.open 的页面引用执行该 window.open方法的页面的对象。
+例如：A页面通过window.open()方法弹出了B页面，在B页面中就可以通过 openner来引用A页面 ，这样就可以通过这个对象 来对 A页面进行操作。
+
+【3】parent
+parent用于在 iframe，frame中生成的子页面中访问 父页面的对象，例如：A页面中有一个iframe 或 frame，那么iframe或frame 中的页面就可以通过 parent对象来引用 A页面中的对象。这样就可以获取 或返回值到A页面中。
+
+【4】探索
+试说明 parent 和 openner 属性各代表什么？
+
+1).parent代表父框架
+
+2).openner 代表打开这个窗口的窗口

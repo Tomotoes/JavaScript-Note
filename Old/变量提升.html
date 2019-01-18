@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #header {
+            height: 150px;
+            background: red;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="gotop">top</button>
+    <div id="header"></div>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).on("click", '#gotop', function () {
+            // alert(1);
+            $("#header").animate({
+                marginLeft: 130
+            }, 200).animate({
+                marginTop: 30
+            }, 200)
+        })
+    </script>
+</body>
+
+</html>

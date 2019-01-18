@@ -1,0 +1,6 @@
+var today = new Date();
+
+var X = new Date(2017,7,17);
+
+if(X>today){alert("大于");}
+else{alert("小于")；}
