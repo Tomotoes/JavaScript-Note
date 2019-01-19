@@ -220,40 +220,40 @@
 
 10. Getter & Setter
 
-   ```js
-   // Getters & Setters
-   const user = {
-     firstName: 'Nathan',
-     lastName: 'Drake',
-   
-     // fullname is a virtual field
-     get fullName() {
-       return this.firstName + ' ' + this.lastName
-     },
-   
-     // validate age before saving
-     set age(value) {
-       if (isNaN(value)) throw Error('Age has to be a number')
-       this._age = Number(value)
-     },
-     get age() {
-       return this._age
-     }
-   }
-   
-   console.log(user.fullName) // Nathan Drake 
-   user.firstName = 'Francis'
-   console.log(user.fullName) // Francis Drake
-   user.age = '29'
-   console.log(user.age) // 29
-   // user.age = 'invalid text' // Error: Age has to be a number
-   ```
+  ```js
+  // Getters & Setters
+  const user = {
+    firstName: 'Nathan',
+    lastName: 'Drake',
+  
+    // fullname is a virtual field
+    get fullName() {
+      return this.firstName + ' ' + this.lastName
+    },
+  
+    // validate age before saving
+    set age(value) {
+      if (isNaN(value)) throw Error('Age has to be a number')
+      this._age = Number(value)
+    },
+    get age() {
+      return this._age
+    }
+  }
+  
+  console.log(user.fullName) // Nathan Drake 
+  user.firstName = 'Francis'
+  console.log(user.fullName) // Francis Drake
+  user.age = '29'
+  console.log(user.age) // 29
+  // user.age = 'invalid text' // Error: Age has to be a number
+  ```
 
-   - 访问 `Getter` 像属性那样去访问
+  - 访问 `Getter` 像属性那样去访问
 
-   - `Setter` 拦截设置
+  - `Setter` 拦截设置
 
-     
+    
 
 11. 逗号表达式
 
@@ -341,6 +341,14 @@
       // can be used to group logical code blocks together
       var i, j
     }
+    ```
+
+16. ~~运算符
+
+    > 对整数进行向下取整
+
+    ```js
+    ~~1.9 === 1
     ```
 
     
