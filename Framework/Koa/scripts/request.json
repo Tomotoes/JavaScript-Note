@@ -1,0 +1,20 @@
+{
+	"request": {
+		"method": "GET",
+		"url": "/",
+		"header": {
+			"host": "localhost:3000",
+			"connection": "keep-alive",
+			"cache-control": "max-age=0",
+			"upgrade-insecure-requests": "1",
+			"user-agent":
+				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
+			"accept":
+				"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+			"accept-encoding": "gzip, deflate, br",
+			"accept-language": "zh-CN,zh;q=0.9",
+			"cookie":
+				"Hm_lvt_ac588a7c3137281d3c4f1032a9e4e46e=1520919871,1521008547,1522829360,1523353516"
+		}
+	}
+}
