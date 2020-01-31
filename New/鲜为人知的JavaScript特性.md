@@ -351,7 +351,28 @@
     ~~1.9 === 1
     ```
 
+17. 在 Chrome 中修改 `navigator.language`
+
+    1. 打开 `chrome://settings/languages`
+    2. 将目标语言移动到顶部 , 即可修改
+
     
+
+18. 使用 Chrome 调试 JS代码
+
+    ```js
+    function test(){
+    	//do something...
+    }
+    
+    debug(test())
+    ```
+
+    
+
+
+
+
 
 
 
